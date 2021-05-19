@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 style="color:green">Game đoán số</h3>
+    <button onclick="play()">Play Game</button>
+    <script>
+       function play() {
+            let khoang = prompt("nhập khoảng số muốn đoán từ 0 --> .......");
+            let rannum = Math.floor(Math.random()*khoang);
+            let i=3;
+            let is_false;
+            while (i>=1){
+                i--;
+                let userchoice = prompt("nhập giá trị bạn chọn")
+                if(rannum==userchoice){
+                    alert("chúc mừng bạn đoán đúng r!");
+                    is_false=false;
+                    break;
+                }
+                else if(userchoice<rannum){
+                    alert("cao lên xíu nữa! , số lượt còn lại"+i);
+                    is_false=true;
+                    
+                }
+                else{
+                    alert("thấp xuống xíu nữa!, số lượt còn lại "+i);
+                    is_false=true;
+                }
+                
+            }
+            if(is_false){
+                alert("bạn đã thua!");
+            }
+       }
+
+    </script>
+</body>
+</html>
